@@ -37,7 +37,7 @@ body {
         inset 0 0 20px rgba(80, 40, 30, 0.12);
 }
 
-/* Cute push pins */
+/* Push pins */
 
 .pin {
     position: absolute;
@@ -64,6 +64,75 @@ body {
 }
 
 /* =========================
+   STICKY NOTES
+   ========================= */
+
+.sticky-note {
+    position: absolute;
+
+    width: 190px;
+    min-height: 145px;
+
+    padding: 18px;
+
+    color: #65463D;
+
+    box-shadow:
+        0 7px 12px rgba(70, 40, 30, 0.22);
+
+    font-family: "Comic Sans MS", "Trebuchet MS", sans-serif;
+}
+
+.note-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.note-line {
+    font-size: 14px;
+    margin: 9px 0;
+}
+
+.sticky-note p {
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* Pink note */
+
+.note-one {
+    left: 8%;
+    top: 13%;
+
+    background: #F8C9D4;
+
+    transform: rotate(-3deg);
+}
+
+/* Cream note */
+
+.note-two {
+    right: 10%;
+    top: 12%;
+
+    background: #FFF0C9;
+
+    transform: rotate(4deg);
+}
+
+/* Peach note */
+
+.note-three {
+    left: 38%;
+    bottom: 9%;
+
+    background: #F7D0B5;
+
+    transform: rotate(-2deg);
+}
+
+/* =========================
    DESK
    ========================= */
 
@@ -83,8 +152,6 @@ body {
         0 -8px 20px rgba(80, 40, 30, 0.18),
         inset 0 8px 0 rgba(255, 255, 255, 0.12);
 }
-
-/* Desk front */
 
 .desk::after {
     content: "";
