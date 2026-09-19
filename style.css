@@ -1,29 +1,452 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     min-height: 100vh;
-    background-color: #F7DDE3;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    overflow: hidden;
+    background: #F7DDE3;
     font-family: Arial, sans-serif;
-    position: relative;
 }
 
-.corkboard {
-    width: 70vw;
-    height: 65vh;
-    background-color: #B9784F;
-    border: 18px solid #8F5A3A;
-    border-radius: 12px;
-    box-shadow: 0 12px 30px rgba(80, 40, 30, 0.25);
+.room {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background: #F7DDE3;
 }
+
+/* =========================
+   CORKBOARD
+   ========================= */
+
+.corkboard {
+    position: absolute;
+    width: 70vw;
+    height: 62vh;
+    left: 15vw;
+    top: 8vh;
+
+    background: #B9784F;
+    border: 18px solid #8F5A3A;
+    border-radius: 14px;
+
+    box-shadow:
+        0 12px 30px rgba(80, 40, 30, 0.25),
+        inset 0 0 20px rgba(80, 40, 30, 0.12);
+}
+
+/* Cute push pins */
+
+.pin {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background: #E9B8C2;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(60, 30, 30, 0.3);
+}
+
+.pin-one {
+    top: 25px;
+    left: 35px;
+}
+
+.pin-two {
+    top: 40px;
+    right: 45px;
+}
+
+.pin-three {
+    bottom: 35px;
+    right: 80px;
+}
+
+/* =========================
+   DESK
+   ========================= */
 
 .desk {
     position: absolute;
-    bottom: 0;
     left: 0;
+    bottom: 0;
+
     width: 100%;
-    height: 15vh;
-    background-color: #C58B63;
-    box-shadow: 0 -8px 20px rgba(80, 40, 30, 0.2);
+    height: 24vh;
+
+    background: #C58B63;
+
+    border-top: 10px solid #A96F4B;
+
+    box-shadow:
+        0 -8px 20px rgba(80, 40, 30, 0.18),
+        inset 0 8px 0 rgba(255, 255, 255, 0.12);
+}
+
+/* Desk front */
+
+.desk::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 14px;
+
+    background: #A96F4B;
+}
+
+/* =========================
+   DESK MAT
+   ========================= */
+
+.desk-mat {
+    position: absolute;
+
+    width: 43vw;
+    height: 8vh;
+
+    left: 29vw;
+    top: 5vh;
+
+    background: #E9B8C2;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 5px 10px rgba(80, 40, 30, 0.12),
+        inset 0 2px 3px rgba(255, 255, 255, 0.3);
+}
+
+/* =========================
+   LAMP
+   ========================= */
+
+.lamp {
+    position: absolute;
+    left: 12vw;
+    top: -11vh;
+
+    width: 90px;
+    height: 150px;
+}
+
+.lamp-shade {
+    position: absolute;
+
+    width: 85px;
+    height: 50px;
+
+    left: 2px;
+    top: 0;
+
+    background: #F4C7A1;
+
+    border-radius: 50% 50% 18px 18px;
+
+    box-shadow: 0 5px 12px rgba(80, 40, 30, 0.2);
+}
+
+.lamp-neck {
+    position: absolute;
+
+    width: 12px;
+    height: 75px;
+
+    left: 38px;
+    top: 38px;
+
+    background: #D89BA8;
+
+    border-radius: 10px;
+}
+
+.lamp-base {
+    position: absolute;
+
+    width: 70px;
+    height: 14px;
+
+    left: 10px;
+    bottom: 10px;
+
+    background: #D89BA8;
+
+    border-radius: 50%;
+}
+
+/* =========================
+   BOOKS
+   ========================= */
+
+.books {
+    position: absolute;
+
+    left: 26vw;
+    top: 8vh;
+
+    width: 130px;
+    height: 70px;
+}
+
+.book {
+    position: absolute;
+
+    width: 120px;
+    height: 20px;
+
+    border-radius: 4px;
+
+    box-shadow: 0 3px 5px rgba(80, 40, 30, 0.18);
+}
+
+.book-one {
+    bottom: 0;
+    left: 5px;
+    background: #E9B8C2;
+    transform: rotate(-2deg);
+}
+
+.book-two {
+    bottom: 19px;
+    left: 0;
+    background: #F4C7A1;
+    transform: rotate(2deg);
+}
+
+.book-three {
+    bottom: 38px;
+    left: 8px;
+    background: #FFF7F3;
+    transform: rotate(-3deg);
+}
+
+/* =========================
+   PLANT
+   ========================= */
+
+.plant {
+    position: absolute;
+
+    right: 12vw;
+    top: -7vh;
+
+    width: 100px;
+    height: 130px;
+}
+
+.plant-pot {
+    position: absolute;
+
+    bottom: 0;
+    left: 25px;
+
+    width: 55px;
+    height: 50px;
+
+    background: #E9B8C2;
+
+    border-radius: 8px 8px 18px 18px;
+
+    box-shadow: 0 5px 8px rgba(80, 40, 30, 0.15);
+}
+
+.leaf {
+    position: absolute;
+
+    width: 35px;
+    height: 55px;
+
+    background: #A9C49A;
+
+    border-radius: 50% 50% 50% 10%;
+}
+
+.leaf-one {
+    left: 25px;
+    top: 25px;
+    transform: rotate(-30deg);
+}
+
+.leaf-two {
+    left: 45px;
+    top: 15px;
+    transform: rotate(25deg);
+}
+
+.leaf-three {
+    left: 8px;
+    top: 40px;
+    transform: rotate(-55deg);
+}
+
+/* =========================
+   MUG
+   ========================= */
+
+.mug {
+    position: absolute;
+
+    right: 27vw;
+    top: 6vh;
+
+    width: 55px;
+    height: 48px;
+
+    background: #FFF7F3;
+
+    border-radius: 6px 6px 16px 16px;
+
+    box-shadow: 0 4px 7px rgba(80, 40, 30, 0.18);
+}
+
+.mug-handle {
+    position: absolute;
+
+    width: 22px;
+    height: 25px;
+
+    right: -16px;
+    top: 9px;
+
+    border: 6px solid #FFF7F3;
+
+    border-left: none;
+
+    border-radius: 0 15px 15px 0;
+}
+
+/* =========================
+   PENCIL CUP
+   ========================= */
+
+.pencil-cup {
+    position: absolute;
+
+    right: 20vw;
+    top: 3vh;
+
+    width: 50px;
+    height: 65px;
+
+    background: #D89BA8;
+
+    border-radius: 6px 6px 12px 12px;
+}
+
+.pencil {
+    position: absolute;
+
+    width: 7px;
+    height: 75px;
+
+    bottom: 48px;
+
+    border-radius: 5px;
+}
+
+.pencil-one {
+    left: 10px;
+    background: #F4C7A1;
+    transform: rotate(-12deg);
+}
+
+.pencil-two {
+    left: 22px;
+    background: #FFF7F3;
+    transform: rotate(4deg);
+}
+
+.pencil-three {
+    left: 34px;
+    background: #E9B8C2;
+    transform: rotate(14deg);
+}
+
+/* =========================
+   TEDDY BEAR
+   ========================= */
+
+.teddy {
+    position: absolute;
+
+    left: 7vw;
+    top: 5vh;
+
+    width: 75px;
+    height: 85px;
+}
+
+.teddy-face {
+    position: absolute;
+
+    width: 65px;
+    height: 65px;
+
+    left: 5px;
+    top: 15px;
+
+    background: #D9A36C;
+
+    border-radius: 50%;
+
+    box-shadow: 0 4px 7px rgba(80, 40, 30, 0.15);
+}
+
+.ear {
+    position: absolute;
+
+    width: 25px;
+    height: 25px;
+
+    top: 8px;
+
+    background: #D9A36C;
+
+    border-radius: 50%;
+}
+
+.ear-left {
+    left: 5px;
+}
+
+.ear-right {
+    right: 5px;
+}
+
+.eye {
+    position: absolute;
+
+    width: 6px;
+    height: 6px;
+
+    top: 25px;
+
+    background: #5A3A32;
+
+    border-radius: 50%;
+}
+
+.eye-left {
+    left: 18px;
+}
+
+.eye-right {
+    right: 18px;
+}
+
+.nose {
+    position: absolute;
+
+    width: 10px;
+    height: 8px;
+
+    left: 27px;
+    top: 35px;
+
+    background: #8F5A3A;
+
+    border-radius: 50%;
 }
